@@ -26,7 +26,7 @@ const MainNav = () => {
 
     return (
         <NavigationContainer theme={baseTheme}>
-            {(token !== null) ? <TabNavigator /> : <AuthNavigator />}
+            {(!isWalletCreated) ? <TabNavigator /> : <AuthNavigator />}
         </NavigationContainer>
     )
 }

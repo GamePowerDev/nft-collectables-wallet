@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "PRODUCT_NAME",
+    "slug": "product-name",
+    "version": "0.0.1",
+    "privacy": "unlisted",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "myproduct",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 30000
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "0.0.1",
+      "bundleIdentifier": "com.example.MyProduct",
+      "usesAppleSignIn": true,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      },
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.MY-GOOGLE-CLIENT-ID"
+        }
+      }
+    },
+    "android": {
+      "package": "com.example.MyProduct",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "facebookScheme": "FACEBOOK_SCHEME",
+    "facebookAppId": "FACEBOOK_APP_ID",
+    "facebookDisplayName": "PRODUCT_NAME"
+  }
+}

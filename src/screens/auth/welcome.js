@@ -4,14 +4,10 @@ import styled from 'styled-components/native'
 
 import globalStyles from '../../extra/styles/global'
 import * as constants from '../../extra/constants'
-import { fbLogin, loginSuccess, googleLogin, appleLogin } from '../../redux/actions'
 
 import { Button } from 'react-native-elements'
 import { AntDesign } from '@expo/vector-icons'
 
-import * as Facebook from 'expo-facebook'
-import * as firebase from 'firebase';
-const FACEBOOK_APP_ID = "1075972036247109"
 
 // test data
 import { testData } from '../../extra/testData.extra'
@@ -19,37 +15,6 @@ import { testData } from '../../extra/testData.extra'
 
 const Welcome = ({navigation}) => {
     const dispatch = useDispatch()
-
-    const initSocialLogin = async () => {
-        try {
-            await Facebook.initializeAsync({appId: FACEBOOK_APP_ID})
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
-    useEffect(() => {
-        initSocialLogin()
-
-        // Listen for authentication state to change.
-        firebase.auth().onAuthStateChanged(user => {
-            if (user != null) {
-                dispatch(loginSuccess({token:user.stsTokenManager, user}));
-            }
-        });
-    }, [])
-
-    const handleFBLoginPress = () => {
-        dispatch(fbLogin());
-    }
-
-    const handleGoogleLoginPress = () => {
-        dispatch(googleLogin());
-    }
-
-    const handleAppleLoginPress = () => {
-        dispatch(appleLogin());
-    }
 
     const handleAdvancedUser = () => {
         //dispatch(loginSuccess({token:testData.userData.stsTokenManager, user: testData.userData}));
@@ -72,18 +37,6 @@ const Welcome = ({navigation}) => {
                 <Logo>
                     <Image source={require('../../../assets/LootBoxLogo-SwordTagLine.png')}/>
                 </Logo>
-
-                <SocialContainer>
-                    <SocialIcon onPress={handleFBLoginPress}>
-                        <AntDesign name="facebook-square" size={34} color="white" />
-                    </SocialIcon>
-                    <SocialIcon onPress={handleGoogleLoginPress}>
-                        <AntDesign name="google" size={34} color="white" />
-                    </SocialIcon>
-                    <SocialIcon onPress={handleAppleLoginPress}>
-                        <AntDesign name="apple1" size={34} color="white" />
-                    </SocialIcon>
-                </SocialContainer>
             </Container>
         </SafeArea>
     )
