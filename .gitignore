@@ -68,8 +68,11 @@ buck-out/
 # Bundle artifacts
 *.jsbundle
 
-# CocoaPods
-/ios/Pods/
+# ios build
+ios/
+
+# android build
+android/
 
 # Expo
 .expo/
