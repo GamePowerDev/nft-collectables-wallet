@@ -16,13 +16,6 @@ export const TabNavigator = () => {
                 inactiveTintColor: 'black',
                 style: {
                     backgroundColor: BACKGROUND_LIGHT,
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 10,
-                    right: 10,
-                    elevation: 0,
-                    borderRadius: 20,
-                    height: 90,
                 },
             }}
             initialRouteName={CollectiblesScreens.Collectibles} 

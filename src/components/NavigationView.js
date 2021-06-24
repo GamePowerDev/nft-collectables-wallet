@@ -11,17 +11,16 @@ import Text from './Text'
 const NavigationView = ({...props}) => {
     return (
       <Navigation>
-        <MaterialIcons  
-            onPress={props.onPress}
-            name={props.leftIconName} 
-            size={props.leftIconSize} 
-            style={{flex: 1}}
-            color="white" />
+        {(props.leftIconName !== null) && 
+            <MaterialIcons  
+                onPress={props.onPress}
+                name={props.leftIconName} 
+                size={props.leftIconSize} 
+                style={{width: 75}}
+                color="white" />
+        }
 
         <NavigationTitle large center color="white">{props.title}</NavigationTitle>
-        <View style={{flex: 1, alignItems: 'flex-end'}}>
-            <Image source={props.icon}/>
-        </View>
       </Navigation>
     )
 }
@@ -38,7 +37,7 @@ const Navigation = styled.View`
 `
 
 const NavigationTitle = styled(Text)`
-    flex: 2;
+    flex: 4;
 `
 
 const Image = styled.Image.attrs({

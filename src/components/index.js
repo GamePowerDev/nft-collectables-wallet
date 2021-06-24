@@ -4,6 +4,6 @@ import BaseContainer from './BaseContainer'
 import NavigationView from './NavigationView'
 import SeriesTag from './SeriesTag'
 import SeriesThumbnail from './SeriesThumbnail'
-import CollectibleThumbnail from './CollectibleThumbnail'
+import CollectibleRow from './CollectibleRow'
 
-export {Text, Button, BaseContainer, NavigationView, SeriesTag, SeriesThumbnail, CollectibleThumbnail}
+export {Text, Button, BaseContainer, NavigationView, SeriesTag, SeriesThumbnail, CollectibleRow}

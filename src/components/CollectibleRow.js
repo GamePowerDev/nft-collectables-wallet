@@ -4,7 +4,7 @@ import Text from './Text'
 
 import * as constants from '../extra/constants'
 
-const Content = ({...props}) => {
+const ThumbnailView = ({...props}) => {
   if(props.item.empty === true) {
     return (
       <EmptyView />
@@ -18,21 +18,26 @@ const Content = ({...props}) => {
   )
 }
 
-const SeriesThumbnail = ({...props}) => {
+const CollectibleRow = ({...props}) => {
     return (
         <Container>
-            <Content {...props} item={props.item} />
+            <ThumbnailImage source={{uri: props.item.image}} />
+            <DetailsView />
         </Container>
     )
 }
 
-export default SeriesThumbnail;
+export default CollectibleRow;
 
 const Container = styled.View`
   flex: 1;
   padding: 3px;
   padding-top: 3px;
   padding-bottom: 10px;
+`
+
+const DetailsView = styled.View`
+  flex: 2;
 `
 
 const Thumbnail = styled.TouchableOpacity`
@@ -55,5 +60,7 @@ const Title = styled(Text)`
 const ThumbnailImage = styled.Image`
   flex: 1;
   margin: 4px;
-  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
 `

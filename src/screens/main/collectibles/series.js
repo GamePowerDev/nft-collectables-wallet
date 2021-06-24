@@ -37,9 +37,7 @@ const Series = ({navigation}) => {
     return (
         <BaseContainer 
             navigationMenuHandler={() => navigation.openDrawer()} 
-            navigationTitle="Series"
-            navigationLeftIconType="menu"
-            navigationIcon={require('../../../../assets/LootBoxLogo-BoxWhite.png')}>
+            navigationTitle="GamePower Network">
 
                 <SeriesList 
                     contentContainerStyle={{paddingTop: 25, paddingBottom: 40}}
